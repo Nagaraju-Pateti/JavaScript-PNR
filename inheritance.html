@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="inheritances.js"></script>
+    <script>
+        Student.prototype=new Person();
+        Student.prototype.constructor=Student;
+        var stn=new Student("Nagaraju","Pateti","2","APRS");
+        console.log(stn.firstname);
+        console.log(stn.lastname);
+        console.log(stn.fullname());
+        console.log(stn.grade);
+        console.log(stn.schoolname);
+    </script>
+</body>
+</html>

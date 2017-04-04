@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="propertiesettesandgetters.js"></script>
+    <script type="text/javascript">
+        var prs = new Person("Nagaraju", "Pateti");
+
+        var result = prs.fullName;
+        alert(result);
+        console.log(Object.getOwnPropertyDescriptor(prs, "fullName"));
+        // writable Example
+        try {
+            Object.defineProperty(prs, "Address", { writable: false });
+            prs.Address = "Miryalaguda";//if we put writable false it won't assign this value
+            console.log(prs.Address);
+        }
+        catch (ex) {
+            alert('tt')
+            console.log(ex.message);
+        }
+        //Configurable Example
+
+    try {
+        
+        Object.defineProperty(prs,"PostalCod",{writable:false,configurable:false,enumerable:true});
+        Object.defineProperty(prs,"PostalCod",{writable:true});// will through the exception bcz of we set configuralbe false previsouly, so we cannont reconfigure it
+        prs.PostalCod="508207";
+        console.log(prs.PostalCod);
+    } catch (error) {
+        console.log(error.message);
+    }
+    //enumerable Example
+    try {
+        
+for (var index = 0; index < 5; index++) {
+    
+    
+}
+
+    } catch (error) {
+       console.log(error.message);
+    }
+    </script>
+</body>
+
+</html>

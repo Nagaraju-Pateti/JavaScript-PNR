@@ -40,11 +40,17 @@
     //enumerable Example
     try {
         
-for (var index = 0; index < 5; index++) {
-    
-    
-}
 
+var personobj=new Person("Nagaraju","Pateti")
+personobj.Address="Miryalaguda";
+personobj.PostalCod="508207";
+personobj.Phone="9010206767";
+
+for(var item in personobj)
+{
+console.log(item);
+
+}
     } catch (error) {
        console.log(error.message);
     }
